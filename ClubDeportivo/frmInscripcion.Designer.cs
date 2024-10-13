@@ -231,7 +231,6 @@
         private Label lblTelefono;
         private TextBox txtDireccion;
         private Label lblDireccion;
-        private Label lblSocio;
         private RadioButton radioBtnSocio;
         private RadioButton radioBtnNoSocio;
         private Button btnGuardar;

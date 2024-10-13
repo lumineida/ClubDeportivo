@@ -52,18 +52,13 @@ namespace ClubDeportivo
                 Datos.Clientes clientes = new Datos.Clientes();
 
                 respuesta = clientes.Nuevo_Cliente(cliente);
-                MessageBox.Show(respuesta);
+
                 bool esnumero = int.TryParse(respuesta, out int codigo);
                 if (esnumero)
                 {
-                    if (codigo == 1)
+                    if (codigo > 0)
                     {
                         MessageBox.Show("El cliente ya se encuentra registrado", "AVISO DEL SISTEMA", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        txtNombre.Text = "";
-                        txtApellido.Text = "";
-                        txtDni.Text = "";
-                        txtTelefono.Text = "";
-                        txtDireccion.Text = "";
                     }
                     else
                     {
@@ -78,6 +73,8 @@ namespace ClubDeportivo
             }
 
         }
+
+
 
 
     }
