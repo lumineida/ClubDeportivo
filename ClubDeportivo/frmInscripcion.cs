@@ -19,18 +19,23 @@ namespace ClubDeportivo
             InitializeComponent();
         }
 
-        private void btnCancelar_Click(object sender, EventArgs e)
+        private void LimpiarTextBox(Control control)
         {
-            txtNombre.Text = "";
-            txtApellido.Text = "";
-            txtDni.Text = "";
-            txtTelefono.Text = "";
-            txtDireccion.Text = "";
+            foreach (Control c in control.Controls)
+            {
+                if (c is TextBox)
+                {
+                    ((TextBox)c).Text = string.Empty; // Limpia el contenido del TextBox
+                }
 
-            frmPrincipal principal = new frmPrincipal();
-            principal.Show();
-            this.Hide();
+                // Si el control tiene otros controles dentro, llama recursivamente
+                if (c.Controls.Count > 0)
+                {
+                    LimpiarTextBox(c); // Llama a la misma función para los controles anidados
+                }
+            }
         }
+
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
@@ -74,8 +79,21 @@ namespace ClubDeportivo
 
         }
 
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            LimpiarTextBox(this);
+        }
 
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            frmPrincipal principal = new frmPrincipal();
+            principal.Show();
+            this.Close();
+        }
 
+        private void txtFichaMedica_TextChanged(object sender, EventArgs e)
+        {
 
+        }
     }
 }
