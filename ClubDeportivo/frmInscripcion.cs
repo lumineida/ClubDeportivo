@@ -19,27 +19,23 @@ namespace ClubDeportivo
             InitializeComponent();
         }
 
-        private void LimpiarTextBox(Control control)
+        private void btnLimpiar_Click(object sender, EventArgs e)
         {
-            foreach (Control c in control.Controls)
-            {
-                if (c is TextBox)
-                {
-                    ((TextBox)c).Text = string.Empty; // Limpia el contenido del TextBox
-                }
+            txtNombre.Text = "";
+            txtApellido.Text = "";
+            cboTipoDoc.Text = "Seleccionar";
+            txtNroDoc.Text = "";
+            txtTelefono.Text = "";
+            txtDireccion.Text = "";
 
-                // Si el control tiene otros controles dentro, llama recursivamente
-                if (c.Controls.Count > 0)
-                {
-                    LimpiarTextBox(c); // Llama a la misma función para los controles anidados
-                }
-            }
+            frmPrincipal principal = new frmPrincipal();
+            principal.Show();
+            this.Hide();
         }
-
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (txtNombre.Text == "" || txtApellido.Text == "" || txtDni.Text == "" || txtTelefono.Text == "" || txtDireccion.Text == "")
+            if (txtNombre.Text == "" || txtApellido.Text == "" || cboTipoDoc.Text == "Seleccionar" || txtNroDoc.Text == "" || txtTelefono.Text == "" || txtDireccion.Text == "")
             {
                 MessageBox.Show("Debe completar datos requeridos (*) ", "AVISO DEL SISTEMA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -49,7 +45,8 @@ namespace ClubDeportivo
                 E_Cliente cliente = new E_Cliente();
                 cliente.Nombre = txtNombre.Text;
                 cliente.Apellido = txtApellido.Text;
-                cliente.Dni = txtDni.Text;
+                cliente.TipoDoc = cboTipoDoc.Text;
+                cliente.NroDoc = txtNroDoc.Text;
                 cliente.Telefono = txtTelefono.Text;
                 cliente.Direccion = txtDireccion.Text;
                 cliente.Socio = radioBtnSocio.Checked;
@@ -70,7 +67,8 @@ namespace ClubDeportivo
                         MessageBox.Show("El cliente se registró satisfactoriamente.", "AVISO DEL SISTEMA", MessageBoxButtons.OK, MessageBoxIcon.Question);
                         txtNombre.Text = "";
                         txtApellido.Text = "";
-                        txtDni.Text = "";
+                        cboTipoDoc.Text = "Seleccionar";
+                        txtNroDoc.Text = "";
                         txtTelefono.Text = "";
                         txtDireccion.Text = "";
                     }
@@ -79,9 +77,17 @@ namespace ClubDeportivo
 
         }
 
-        private void btnLimpiar_Click(object sender, EventArgs e)
+        private void cboTipoDoc_SelectedIndexChanged(object sender, EventArgs e)
         {
-            LimpiarTextBox(this);
+
+        }
+
+        private void frmInscripcion_Load(object sender, EventArgs e)
+        {
+            cboTipoDoc.Items.Add("Seleccionar");
+            cboTipoDoc.Items.Add("DNI");
+            cboTipoDoc.Items.Add("Pasaporte");
+            cboTipoDoc.Items.Add("Extranjero");
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
@@ -91,7 +97,7 @@ namespace ClubDeportivo
             this.Close();
         }
 
-        private void txtFichaMedica_TextChanged(object sender, EventArgs e)
+        private void chkFichaMedica_CheckedChanged(object sender, EventArgs e)
         {
 
         }

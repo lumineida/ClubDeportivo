@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ClubDeportivo.Entidades
 {
-    internal class E_Socio
+    internal class E_Socio : E_Cliente
     {
     }
 }
