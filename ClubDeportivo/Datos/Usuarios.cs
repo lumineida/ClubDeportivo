@@ -25,8 +25,8 @@ namespace ClubDeportivo.Datos
 
                 comando.CommandType = CommandType.StoredProcedure;
 
-                comando.Parameters.Add("Usu", MySqlDbType.VarChar).Value = L_Usu;
-                comando.Parameters.Add("Pass", MySqlDbType.VarChar).Value = P_Usu;
+                comando.Parameters.Add("p_username", MySqlDbType.VarChar).Value = L_Usu;
+                comando.Parameters.Add("p_password", MySqlDbType.VarChar).Value = P_Usu;
 
                 sqlCon.Open();
 
