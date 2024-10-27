@@ -222,7 +222,6 @@
             cboTipoDoc.Name = "cboTipoDoc";
             cboTipoDoc.Size = new Size(85, 23);
             cboTipoDoc.TabIndex = 18;
-            cboTipoDoc.SelectedIndexChanged += cboTipoDoc_SelectedIndexChanged;
             // 
             // btnVolver
             // 
@@ -245,7 +244,6 @@
             chkFichaMedica.Text = "Ficha médica";
             chkFichaMedica.TextAlign = ContentAlignment.MiddleRight;
             chkFichaMedica.UseVisualStyleBackColor = true;
-            chkFichaMedica.CheckedChanged += chkFichaMedica_CheckedChanged;
             // 
             // frmInscripcion
             // 

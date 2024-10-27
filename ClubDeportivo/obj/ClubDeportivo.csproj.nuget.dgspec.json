@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Tecnicatura Superior BA\\Desarrollo de Software\\Desarrollo de Sistemas Orientado a Objetos\\Proyecto Integrador\\1\\ClubDeportivo-master\\ClubDeportivo\\ClubDeportivo.csproj": {}
+    "C:\\Users\\cechu\\source\\repos\\ClubDeportivo2\\ClubDeportivo\\ClubDeportivo.csproj": {}
   },
   "projects": {
-    "C:\\Tecnicatura Superior BA\\Desarrollo de Software\\Desarrollo de Sistemas Orientado a Objetos\\Proyecto Integrador\\1\\ClubDeportivo-master\\ClubDeportivo\\ClubDeportivo.csproj": {
+    "C:\\Users\\cechu\\source\\repos\\ClubDeportivo2\\ClubDeportivo\\ClubDeportivo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Tecnicatura Superior BA\\Desarrollo de Software\\Desarrollo de Sistemas Orientado a Objetos\\Proyecto Integrador\\1\\ClubDeportivo-master\\ClubDeportivo\\ClubDeportivo.csproj",
+        "projectUniqueName": "C:\\Users\\cechu\\source\\repos\\ClubDeportivo2\\ClubDeportivo\\ClubDeportivo.csproj",
         "projectName": "ClubDeportivo",
-        "projectPath": "C:\\Tecnicatura Superior BA\\Desarrollo de Software\\Desarrollo de Sistemas Orientado a Objetos\\Proyecto Integrador\\1\\ClubDeportivo-master\\ClubDeportivo\\ClubDeportivo.csproj",
-        "packagesPath": "C:\\Users\\sofi_\\.nuget\\packages\\",
-        "outputPath": "C:\\Tecnicatura Superior BA\\Desarrollo de Software\\Desarrollo de Sistemas Orientado a Objetos\\Proyecto Integrador\\1\\ClubDeportivo-master\\ClubDeportivo\\obj\\",
+        "projectPath": "C:\\Users\\cechu\\source\\repos\\ClubDeportivo2\\ClubDeportivo\\ClubDeportivo.csproj",
+        "packagesPath": "C:\\Users\\cechu\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\cechu\\source\\repos\\ClubDeportivo2\\ClubDeportivo\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\sofi_\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\cechu\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -42,9 +43,8 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "all"
-        },
-        "SdkAnalysisLevel": "9.0.100"
+          "auditMode": "direct"
+        }
       },
       "frameworks": {
         "net6.0-windows7.0": {
@@ -66,6 +66,24 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.35, 6.0.35]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[6.0.35, 6.0.35]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.35, 6.0.35]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[6.0.35, 6.0.35]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
@@ -74,7 +92,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100-preview.7.24407.12\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403\\RuntimeIdentifierGraph.json"
         }
       }
     }
