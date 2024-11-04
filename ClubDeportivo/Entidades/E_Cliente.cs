@@ -19,5 +19,8 @@ namespace ClubDeportivo.Entidades
         public bool FichaMedica { get; set; }
         public DateTime FechaIngreso { get; set; }
 
+
+        public virtual void CargaGrillzzza() { }
+
     }
 }
