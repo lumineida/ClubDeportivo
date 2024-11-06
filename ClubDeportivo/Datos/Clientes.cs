@@ -12,7 +12,7 @@ namespace ClubDeportivo.Datos
     internal class Clientes
     {
 
-        public string Nuevo_Cliente(E_Cliente cliente)
+        public string? Nuevo_Cliente(E_Cliente cliente)
         {
             string? salida;
             salida = " ";

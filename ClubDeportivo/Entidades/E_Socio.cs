@@ -12,24 +12,23 @@ namespace ClubDeportivo.Entidades
     internal class E_Socio : E_Cliente
     {
 
-        public frmPrincipal Principal = new frmPrincipal();
-        DataGridView grid;
+        public List<E_Cliente> listado = new List<E_Cliente>(); 
+
         public E_Socio()
         {
-
-            grid = Principal.dataGridNoSocios;
-
         }
 
-        public void CargaGrilla()
+        public void CargaDatos()
         {
+            listado.Clear();
+
             MySqlConnection sqlCon = new MySqlConnection();
             try
             {
                 string query;
                 sqlCon = Conexion.getInstancia().CrearConexion();
 
-                query = "select nombre, apellido, concat(tipo_doc, ' ', nro_doc), telefono, direccion from cliente where socio = 1;";
+                query = "select id, nombre, apellido, concat(tipo_doc, ' ', nro_doc), telefono, direccion from cliente where socio = 1;";
 
 
                 MySqlCommand comando = new MySqlCommand(query, sqlCon);
@@ -41,12 +40,8 @@ namespace ClubDeportivo.Entidades
                 if (reader.HasRows)
                 {
                     while (reader.Read())
-                    {
-                        int renglon = grid.Rows.Add();
-                        grid.Rows[renglon].Cells[0].Value = reader.GetString(0);
-                        grid.Rows[renglon].Cells[1].Value = reader.GetString(1);
-                        grid.Rows[renglon].Cells[2].Value = reader.GetString(2);
-                        grid.Rows[renglon].Cells[3].Value = reader.GetString(3);
+                    { 
+                        listado.Add(new E_Cliente(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetString(5)));
                     }
                 }
                 else

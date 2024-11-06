@@ -35,26 +35,26 @@
             lblIngreso = new Label();
             tabsClientes = new TabControl();
             tabSocios = new TabPage();
-            dataGridSocios = new DataGridView();
-            nombre = new DataGridViewTextBoxColumn();
-            apellido = new DataGridViewTextBoxColumn();
-            documento = new DataGridViewTextBoxColumn();
-            telefono = new DataGridViewTextBoxColumn();
-            direccion = new DataGridViewTextBoxColumn();
-            botones = new DataGridViewTextBoxColumn();
+            dtgvSocios = new DataGridView();
             tabNoSocios = new TabPage();
-            dataGridNoSocios = new DataGridView();
+            dtgvNoSocios = new DataGridView();
             nombre2 = new DataGridViewTextBoxColumn();
             apellido2 = new DataGridViewTextBoxColumn();
             documento2 = new DataGridViewTextBoxColumn();
             telefono2 = new DataGridViewTextBoxColumn();
             direccion2 = new DataGridViewTextBoxColumn();
             botones2 = new DataGridViewTextBoxColumn();
+            nombre = new DataGridViewTextBoxColumn();
+            apellido = new DataGridViewTextBoxColumn();
+            documento = new DataGridViewTextBoxColumn();
+            telefono = new DataGridViewTextBoxColumn();
+            direccion = new DataGridViewTextBoxColumn();
+            botones = new DataGridViewTextBoxColumn();
             tabsClientes.SuspendLayout();
             tabSocios.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridSocios).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dtgvSocios).BeginInit();
             tabNoSocios.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridNoSocios).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dtgvNoSocios).BeginInit();
             SuspendLayout();
             // 
             // btnSalir
@@ -118,7 +118,7 @@
             // 
             // tabSocios
             // 
-            tabSocios.Controls.Add(dataGridSocios);
+            tabSocios.Controls.Add(dtgvSocios);
             tabSocios.Location = new Point(4, 29);
             tabSocios.Name = "tabSocios";
             tabSocios.Padding = new Padding(3);
@@ -128,19 +128,94 @@
             tabSocios.UseVisualStyleBackColor = true;
             tabSocios.Click += tabSocios_Click;
             // 
-            // dataGridSocios
+            // dtgvSocios
             // 
-            dataGridSocios.AllowUserToAddRows = false;
-            dataGridSocios.AllowUserToDeleteRows = false;
-            dataGridSocios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridSocios.Columns.AddRange(new DataGridViewColumn[] { nombre, apellido, documento, telefono, direccion, botones });
-            dataGridSocios.Dock = DockStyle.Fill;
-            dataGridSocios.Location = new Point(3, 3);
-            dataGridSocios.Name = "dataGridSocios";
-            dataGridSocios.RowHeadersWidth = 51;
-            dataGridSocios.RowTemplate.Height = 29;
-            dataGridSocios.Size = new Size(968, 333);
-            dataGridSocios.TabIndex = 0;
+            dtgvSocios.AllowUserToAddRows = false;
+            dtgvSocios.AllowUserToDeleteRows = false;
+            dtgvSocios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dtgvSocios.Columns.AddRange(new DataGridViewColumn[] { nombre, apellido, documento, telefono, direccion, botones });
+            dtgvSocios.Dock = DockStyle.Fill;
+            dtgvSocios.Location = new Point(3, 3);
+            dtgvSocios.Name = "dtgvSocios";
+            dtgvSocios.RowHeadersWidth = 51;
+            dtgvSocios.RowTemplate.Height = 29;
+            dtgvSocios.Size = new Size(968, 333);
+            dtgvSocios.TabIndex = 0;
+            // 
+            // tabNoSocios
+            // 
+            tabNoSocios.Controls.Add(dtgvNoSocios);
+            tabNoSocios.Location = new Point(4, 29);
+            tabNoSocios.Name = "tabNoSocios";
+            tabNoSocios.Padding = new Padding(3);
+            tabNoSocios.Size = new Size(974, 339);
+            tabNoSocios.TabIndex = 1;
+            tabNoSocios.Text = "NO SOCIOS";
+            tabNoSocios.UseVisualStyleBackColor = true;
+            tabNoSocios.Click += tabNoSocios_Click;
+            // 
+            // dtgvNoSocios
+            // 
+            dtgvNoSocios.AllowUserToAddRows = false;
+            dtgvNoSocios.AllowUserToDeleteRows = false;
+            dtgvNoSocios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dtgvNoSocios.Columns.AddRange(new DataGridViewColumn[] { nombre2, apellido2, documento2, telefono2, direccion2, botones2 });
+            dtgvNoSocios.Dock = DockStyle.Fill;
+            dtgvNoSocios.Location = new Point(3, 3);
+            dtgvNoSocios.Name = "dtgvNoSocios";
+            dtgvNoSocios.ReadOnly = true;
+            dtgvNoSocios.RowHeadersWidth = 51;
+            dtgvNoSocios.RowTemplate.Height = 29;
+            dtgvNoSocios.Size = new Size(968, 333);
+            dtgvNoSocios.TabIndex = 1;
+            // 
+            // nombre2
+            // 
+            nombre2.HeaderText = "Nombre";
+            nombre2.MinimumWidth = 6;
+            nombre2.Name = "nombre2";
+            nombre2.ReadOnly = true;
+            nombre2.Width = 125;
+            // 
+            // apellido2
+            // 
+            apellido2.HeaderText = "Apellido";
+            apellido2.MinimumWidth = 6;
+            apellido2.Name = "apellido2";
+            apellido2.ReadOnly = true;
+            apellido2.Width = 125;
+            // 
+            // documento2
+            // 
+            documento2.HeaderText = "Documento";
+            documento2.MinimumWidth = 6;
+            documento2.Name = "documento2";
+            documento2.ReadOnly = true;
+            documento2.Width = 125;
+            // 
+            // telefono2
+            // 
+            telefono2.HeaderText = "Telefono";
+            telefono2.MinimumWidth = 6;
+            telefono2.Name = "telefono2";
+            telefono2.ReadOnly = true;
+            telefono2.Width = 125;
+            // 
+            // direccion2
+            // 
+            direccion2.HeaderText = "Direccion";
+            direccion2.MinimumWidth = 6;
+            direccion2.Name = "direccion2";
+            direccion2.ReadOnly = true;
+            direccion2.Width = 125;
+            // 
+            // botones2
+            // 
+            botones2.HeaderText = "";
+            botones2.MinimumWidth = 6;
+            botones2.Name = "botones2";
+            botones2.ReadOnly = true;
+            botones2.Width = 125;
             // 
             // nombre
             // 
@@ -179,78 +254,10 @@
             // 
             // botones
             // 
-            botones.HeaderText = "";
+            botones.HeaderText = "opciones";
             botones.MinimumWidth = 6;
             botones.Name = "botones";
             botones.Width = 125;
-            // 
-            // tabNoSocios
-            // 
-            tabNoSocios.Controls.Add(dataGridNoSocios);
-            tabNoSocios.Location = new Point(4, 29);
-            tabNoSocios.Name = "tabNoSocios";
-            tabNoSocios.Padding = new Padding(3);
-            tabNoSocios.Size = new Size(974, 339);
-            tabNoSocios.TabIndex = 1;
-            tabNoSocios.Text = "NO SOCIOS";
-            tabNoSocios.UseVisualStyleBackColor = true;
-            tabNoSocios.Click += tabNoSocios_Click;
-            // 
-            // dataGridNoSocios
-            // 
-            dataGridNoSocios.AllowUserToAddRows = false;
-            dataGridNoSocios.AllowUserToDeleteRows = false;
-            dataGridNoSocios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridNoSocios.Columns.AddRange(new DataGridViewColumn[] { nombre2, apellido2, documento2, telefono2, direccion2, botones2 });
-            dataGridNoSocios.Dock = DockStyle.Fill;
-            dataGridNoSocios.Location = new Point(3, 3);
-            dataGridNoSocios.Name = "dataGridNoSocios";
-            dataGridNoSocios.RowHeadersWidth = 51;
-            dataGridNoSocios.RowTemplate.Height = 29;
-            dataGridNoSocios.Size = new Size(968, 333);
-            dataGridNoSocios.TabIndex = 1;
-            // 
-            // nombre2
-            // 
-            nombre2.HeaderText = "Nombre";
-            nombre2.MinimumWidth = 6;
-            nombre2.Name = "nombre2";
-            nombre2.Width = 125;
-            // 
-            // apellido2
-            // 
-            apellido2.HeaderText = "Apellido";
-            apellido2.MinimumWidth = 6;
-            apellido2.Name = "apellido2";
-            apellido2.Width = 125;
-            // 
-            // documento2
-            // 
-            documento2.HeaderText = "Documento";
-            documento2.MinimumWidth = 6;
-            documento2.Name = "documento2";
-            documento2.Width = 125;
-            // 
-            // telefono2
-            // 
-            telefono2.HeaderText = "Telefono";
-            telefono2.MinimumWidth = 6;
-            telefono2.Name = "telefono2";
-            telefono2.Width = 125;
-            // 
-            // direccion2
-            // 
-            direccion2.HeaderText = "Direccion";
-            direccion2.MinimumWidth = 6;
-            direccion2.Name = "direccion2";
-            direccion2.Width = 125;
-            // 
-            // botones2
-            // 
-            botones2.HeaderText = "";
-            botones2.MinimumWidth = 6;
-            botones2.Name = "botones2";
-            botones2.Width = 125;
             // 
             // frmPrincipal
             // 
@@ -268,9 +275,9 @@
             Load += frmPrincipal_Load;
             tabsClientes.ResumeLayout(false);
             tabSocios.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridSocios).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dtgvSocios).EndInit();
             tabNoSocios.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridNoSocios).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dtgvNoSocios).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -282,23 +289,22 @@
         private Button btnPagoCuota;
         private Button btnBajas;
         private Label lblIngreso;
-        private TabControl tabsCLientes;
+        private TabControl tabsClientes;
         private TabPage tabSocios;
         private TabPage tabNoSocios;
-        public DataGridViewTextBoxColumn nombre;
-        public DataGridViewTextBoxColumn apellido;
-        public DataGridViewTextBoxColumn documento;
-        public DataGridViewTextBoxColumn telefono;
-        public DataGridViewTextBoxColumn direccion;
-        public DataGridViewTextBoxColumn botones;
-        private TabControl tabsClientes;
-        public DataGridView dataGridSocios;
-        public DataGridView dataGridNoSocios;
+        public DataGridView dtgvSocios;
+        public DataGridView dtgvNoSocios;
         public DataGridViewTextBoxColumn nombre2;
         public DataGridViewTextBoxColumn apellido2;
         public DataGridViewTextBoxColumn documento2;
         public DataGridViewTextBoxColumn telefono2;
         public DataGridViewTextBoxColumn direccion2;
         public DataGridViewTextBoxColumn botones2;
+        private DataGridViewTextBoxColumn nombre;
+        private DataGridViewTextBoxColumn apellido;
+        private DataGridViewTextBoxColumn documento;
+        private DataGridViewTextBoxColumn telefono;
+        private DataGridViewTextBoxColumn direccion;
+        private DataGridViewTextBoxColumn botones;
     }
 }

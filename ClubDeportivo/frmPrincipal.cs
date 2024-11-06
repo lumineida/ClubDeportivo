@@ -26,8 +26,9 @@ namespace ClubDeportivo
         {
             lblIngreso.Text = "BIENVENIDO USUARIO: " + usuario;
 
-            Debug.WriteLine("test principal");
-            //tabSocios_Click(sender, e);
+            tabSocios_Click(sender, e);
+
+
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -43,23 +44,42 @@ namespace ClubDeportivo
 
         }
 
-        private void tabSelected(object sender, EventArgs e)
-        {
-            MessageBox.Show(e.ToString());
-
-        }
-
-
 
         private void tabSocios_Click(object sender, EventArgs e)
         {
             E_Socio socios = new E_Socio();
+            socios.CargaDatos();
+            if (socios.listado.Count > 0)
+            {
+                cargarDatosGrilla(socios.listado, "Socios");
+            }
+           
         }
 
         private void tabNoSocios_Click(object sender, EventArgs e)
         {
             E_NoSocio noSocios = new E_NoSocio();
-            noSocios.CargaGrilla();
+            noSocios.CargaDatos();
+            if (noSocios.listado.Count > 0)
+            {
+                cargarDatosGrilla(noSocios.listado, "NoSocios");
+            }
+        }
+
+        private void cargarDatosGrilla(List<E_Cliente> listado, string tipo)
+        {
+            DataGridView grid = tipo == "Socios" ? dtgvSocios : dtgvNoSocios;
+
+            foreach (E_Cliente cliente in listado)
+            {
+                Debug.WriteLine(cliente.Nombre);
+                int renglon = grid.Rows.Add();
+                grid.Rows[renglon].Cells[0].Value = cliente.Nombre;
+                grid.Rows[renglon].Cells[1].Value = cliente.Apellido;
+                grid.Rows[renglon].Cells[2].Value = cliente.Documento;
+                grid.Rows[renglon].Cells[3].Value = cliente.Telefono;
+                grid.Rows[renglon].Cells[4].Value = cliente.Direccion;
+            }
         }
     }
 }
