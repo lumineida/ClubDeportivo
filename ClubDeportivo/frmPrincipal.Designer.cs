@@ -38,18 +38,21 @@
             dtgvSocios = new DataGridView();
             tabNoSocios = new TabPage();
             dtgvNoSocios = new DataGridView();
+            IdNS = new DataGridViewTextBoxColumn();
             nombre2 = new DataGridViewTextBoxColumn();
             apellido2 = new DataGridViewTextBoxColumn();
             documento2 = new DataGridViewTextBoxColumn();
             telefono2 = new DataGridViewTextBoxColumn();
             direccion2 = new DataGridViewTextBoxColumn();
-            botones2 = new DataGridViewTextBoxColumn();
+            actividad = new DataGridViewButtonColumn();
+            Id = new DataGridViewTextBoxColumn();
             nombre = new DataGridViewTextBoxColumn();
             apellido = new DataGridViewTextBoxColumn();
             documento = new DataGridViewTextBoxColumn();
             telefono = new DataGridViewTextBoxColumn();
             direccion = new DataGridViewTextBoxColumn();
-            botones = new DataGridViewTextBoxColumn();
+            pagar = new DataGridViewButtonColumn();
+            Carnet = new DataGridViewButtonColumn();
             tabsClientes.SuspendLayout();
             tabSocios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dtgvSocios).BeginInit();
@@ -133,7 +136,7 @@
             dtgvSocios.AllowUserToAddRows = false;
             dtgvSocios.AllowUserToDeleteRows = false;
             dtgvSocios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dtgvSocios.Columns.AddRange(new DataGridViewColumn[] { nombre, apellido, documento, telefono, direccion, botones });
+            dtgvSocios.Columns.AddRange(new DataGridViewColumn[] { Id, nombre, apellido, documento, telefono, direccion, pagar, Carnet });
             dtgvSocios.Dock = DockStyle.Fill;
             dtgvSocios.Location = new Point(3, 3);
             dtgvSocios.Name = "dtgvSocios";
@@ -141,6 +144,7 @@
             dtgvSocios.RowTemplate.Height = 29;
             dtgvSocios.Size = new Size(968, 333);
             dtgvSocios.TabIndex = 0;
+            dtgvSocios.CellContentClick += dtgvSocios_CellContentClick;
             // 
             // tabNoSocios
             // 
@@ -159,7 +163,7 @@
             dtgvNoSocios.AllowUserToAddRows = false;
             dtgvNoSocios.AllowUserToDeleteRows = false;
             dtgvNoSocios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dtgvNoSocios.Columns.AddRange(new DataGridViewColumn[] { nombre2, apellido2, documento2, telefono2, direccion2, botones2 });
+            dtgvNoSocios.Columns.AddRange(new DataGridViewColumn[] { IdNS, nombre2, apellido2, documento2, telefono2, direccion2, actividad });
             dtgvNoSocios.Dock = DockStyle.Fill;
             dtgvNoSocios.Location = new Point(3, 3);
             dtgvNoSocios.Name = "dtgvNoSocios";
@@ -168,6 +172,15 @@
             dtgvNoSocios.RowTemplate.Height = 29;
             dtgvNoSocios.Size = new Size(968, 333);
             dtgvNoSocios.TabIndex = 1;
+            dtgvNoSocios.CellContentClick += dtgvNoSocios_CellContentClick;
+            // 
+            // IdNS
+            // 
+            IdNS.HeaderText = "ID";
+            IdNS.MinimumWidth = 6;
+            IdNS.Name = "IdNS";
+            IdNS.ReadOnly = true;
+            IdNS.Width = 125;
             // 
             // nombre2
             // 
@@ -209,13 +222,25 @@
             direccion2.ReadOnly = true;
             direccion2.Width = 125;
             // 
-            // botones2
+            // actividad
             // 
-            botones2.HeaderText = "";
-            botones2.MinimumWidth = 6;
-            botones2.Name = "botones2";
-            botones2.ReadOnly = true;
-            botones2.Width = 125;
+            actividad.HeaderText = "";
+            actividad.MinimumWidth = 6;
+            actividad.Name = "actividad";
+            actividad.ReadOnly = true;
+            actividad.Resizable = DataGridViewTriState.True;
+            actividad.SortMode = DataGridViewColumnSortMode.Automatic;
+            actividad.Text = "Inscribir a actividad";
+            actividad.UseColumnTextForButtonValue = true;
+            actividad.Width = 180;
+            // 
+            // Id
+            // 
+            Id.HeaderText = "ID";
+            Id.MinimumWidth = 6;
+            Id.Name = "Id";
+            Id.ReadOnly = true;
+            Id.Width = 50;
             // 
             // nombre
             // 
@@ -236,7 +261,7 @@
             documento.HeaderText = "Documento";
             documento.MinimumWidth = 6;
             documento.Name = "documento";
-            documento.Width = 125;
+            documento.Width = 140;
             // 
             // telefono
             // 
@@ -250,14 +275,29 @@
             direccion.HeaderText = "Direccion";
             direccion.MinimumWidth = 6;
             direccion.Name = "direccion";
-            direccion.Width = 125;
+            direccion.Width = 150;
             // 
-            // botones
+            // pagar
             // 
-            botones.HeaderText = "opciones";
-            botones.MinimumWidth = 6;
-            botones.Name = "botones";
-            botones.Width = 125;
+            pagar.HeaderText = "";
+            pagar.MinimumWidth = 6;
+            pagar.Name = "pagar";
+            pagar.Resizable = DataGridViewTriState.True;
+            pagar.SortMode = DataGridViewColumnSortMode.Automatic;
+            pagar.Text = "Pagar";
+            pagar.UseColumnTextForButtonValue = true;
+            pagar.Width = 90;
+            // 
+            // Carnet
+            // 
+            Carnet.HeaderText = "";
+            Carnet.MinimumWidth = 6;
+            Carnet.Name = "Carnet";
+            Carnet.Resizable = DataGridViewTriState.True;
+            Carnet.SortMode = DataGridViewColumnSortMode.Automatic;
+            Carnet.Text = "Carnet";
+            Carnet.UseColumnTextForButtonValue = true;
+            Carnet.Width = 90;
             // 
             // frmPrincipal
             // 
@@ -294,17 +334,20 @@
         private TabPage tabNoSocios;
         public DataGridView dtgvSocios;
         public DataGridView dtgvNoSocios;
-        public DataGridViewTextBoxColumn nombre2;
-        public DataGridViewTextBoxColumn apellido2;
-        public DataGridViewTextBoxColumn documento2;
-        public DataGridViewTextBoxColumn telefono2;
-        public DataGridViewTextBoxColumn direccion2;
-        public DataGridViewTextBoxColumn botones2;
+        private DataGridViewTextBoxColumn IdNS;
+        private DataGridViewTextBoxColumn nombre2;
+        private DataGridViewTextBoxColumn apellido2;
+        private DataGridViewTextBoxColumn documento2;
+        private DataGridViewTextBoxColumn telefono2;
+        private DataGridViewTextBoxColumn direccion2;
+        private DataGridViewButtonColumn actividad;
+        private DataGridViewTextBoxColumn Id;
         private DataGridViewTextBoxColumn nombre;
         private DataGridViewTextBoxColumn apellido;
         private DataGridViewTextBoxColumn documento;
         private DataGridViewTextBoxColumn telefono;
         private DataGridViewTextBoxColumn direccion;
-        private DataGridViewTextBoxColumn botones;
+        private DataGridViewButtonColumn pagar;
+        private DataGridViewButtonColumn Carnet;
     }
 }

@@ -53,7 +53,7 @@ namespace ClubDeportivo
             {
                 cargarDatosGrilla(socios.listado, "Socios");
             }
-           
+
         }
 
         private void tabNoSocios_Click(object sender, EventArgs e)
@@ -74,12 +74,38 @@ namespace ClubDeportivo
             {
                 Debug.WriteLine(cliente.Nombre);
                 int renglon = grid.Rows.Add();
-                grid.Rows[renglon].Cells[0].Value = cliente.Nombre;
-                grid.Rows[renglon].Cells[1].Value = cliente.Apellido;
-                grid.Rows[renglon].Cells[2].Value = cliente.Documento;
-                grid.Rows[renglon].Cells[3].Value = cliente.Telefono;
-                grid.Rows[renglon].Cells[4].Value = cliente.Direccion;
+                grid.Rows[renglon].Cells[0].Value = cliente.Id;
+                grid.Rows[renglon].Cells[1].Value = cliente.Nombre;
+                grid.Rows[renglon].Cells[2].Value = cliente.Apellido;
+                grid.Rows[renglon].Cells[3].Value = cliente.Documento;
+                grid.Rows[renglon].Cells[4].Value = cliente.Telefono;
+                grid.Rows[renglon].Cells[5].Value = cliente.Direccion;
             }
+        }
+
+        private void dtgvSocios_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dtgvSocios.Columns[e.ColumnIndex].Name == "pagar" && e.RowIndex >= 0)
+            {
+                var rowData = dtgvSocios.Rows[e.RowIndex].Cells[0].Value;
+                MessageBox.Show($"Cambiar esto para que abra el form de Pagar para el socio con ID: {rowData}");
+            }
+            else if (dtgvSocios.Columns[e.ColumnIndex].Name == "Carnet" && e.RowIndex >= 0)
+            {
+                var rowData = dtgvSocios.Rows[e.RowIndex].Cells[0].Value;
+                MessageBox.Show($"Cambiar esto para que abra el form de Carnet para el socio con ID: {rowData}");
+            }
+
+        }
+
+        private void dtgvNoSocios_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dtgvNoSocios.Columns[e.ColumnIndex].Name == "actividad" && e.RowIndex >= 0)
+            {
+                var rowData = dtgvNoSocios.Rows[e.RowIndex].Cells[0].Value;
+                MessageBox.Show($"Cambiar esto para que abra el form de incripcion y pago de actividad para el no-socio con ID: {rowData}");
+            }
+
         }
     }
 }
