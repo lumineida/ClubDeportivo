@@ -89,3 +89,4 @@ C:\Users\cechu\source\repos\ClubDeportivo2\ClubDeportivo\obj\Debug\net6.0-window
 C:\Users\cechu\source\repos\ClubDeportivo2\ClubDeportivo\obj\Debug\net6.0-windows\ClubDeportivo.genruntimeconfig.cache
 C:\Users\cechu\source\repos\ClubDeportivo2\ClubDeportivo\obj\Debug\net6.0-windows\ref\ClubDeportivo.dll
 C:\Users\cechu\source\repos\ClubDeportivo2\ClubDeportivo\obj\Debug\net6.0-windows\ClubDeportivo.Carnet.resources
+C:\Users\cechu\source\repos\ClubDeportivo2\ClubDeportivo\obj\Debug\net6.0-windows\ClubDeportivo.frmPagar.resources

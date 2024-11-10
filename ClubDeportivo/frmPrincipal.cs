@@ -83,8 +83,14 @@ namespace ClubDeportivo
         {
             if (dtgvSocios.Columns[e.ColumnIndex].Name == "pagar" && e.RowIndex >= 0)
             {
-                var rowData = dtgvSocios.Rows[e.RowIndex].Cells[0].Value;
-                MessageBox.Show($"Cambiar esto para que abra el form de Pagar para el socio con ID: {rowData}");
+                string id = dtgvSocios.Rows[e.RowIndex].Cells["Id"].Value.ToString()!;
+                string apellido = dtgvSocios.Rows[e.RowIndex].Cells["Apellido"].Value.ToString()!;
+                string nombre = dtgvSocios.Rows[e.RowIndex].Cells["Nombre"].Value.ToString()!;
+                string documento = dtgvSocios.Rows[e.RowIndex].Cells["Documento"].Value.ToString()!;
+
+
+                frmPagar PagoSocio = new frmPagar(id, apellido, nombre, documento);
+                PagoSocio.ShowDialog();
             }
             else if (dtgvSocios.Columns[e.ColumnIndex].Name == "Carnet" && e.RowIndex >= 0)
             {
@@ -103,8 +109,16 @@ namespace ClubDeportivo
         {
             if (dtgvNoSocios.Columns[e.ColumnIndex].Name == "actividad" && e.RowIndex >= 0)
             {
-                var rowData = dtgvNoSocios.Rows[e.RowIndex].Cells[0].Value;
-                MessageBox.Show($"Cambiar esto para que abra el form de incripcion y pago de actividad para el no-socio con ID: {rowData}");
+
+                // deberia ser otra pantalla ya que necesita elegir la actividad a la que se inscribe 
+
+                string id = dtgvNoSocios.Rows[e.RowIndex].Cells[0].Value.ToString();
+                string apellido = dtgvNoSocios.Rows[e.RowIndex].Cells[1].Value.ToString();
+                string nombre = dtgvNoSocios.Rows[e.RowIndex].Cells[2].Value.ToString();
+                string documento = dtgvNoSocios.Rows[e.RowIndex].Cells[3].Value.ToString();
+
+                frmPagar PagoNoSocio = new frmPagar(id, apellido, nombre, documento);
+                PagoNoSocio.ShowDialog();
             }
 
         }
