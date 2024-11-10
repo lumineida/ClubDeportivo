@@ -1,11 +1,14 @@
 ﻿using ClubDeportivo.Datos;
 using MySql.Data.MySqlClient;
+using MySqlX.XDevAPI;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.ComponentModel.Design.ObjectSelectorEditor;
 
 namespace ClubDeportivo.Entidades
 {
@@ -61,6 +64,8 @@ namespace ClubDeportivo.Entidades
                 }
             }
         }
+
+
 
     }
 }

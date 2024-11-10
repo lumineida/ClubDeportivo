@@ -30,12 +30,19 @@
         {
             btnSalir = new Button();
             btnInscribir = new Button();
-            btnPagoCuota = new Button();
             btnBajas = new Button();
             lblIngreso = new Label();
             tabsClientes = new TabControl();
             tabSocios = new TabPage();
             dtgvSocios = new DataGridView();
+            Id = new DataGridViewTextBoxColumn();
+            nombre = new DataGridViewTextBoxColumn();
+            apellido = new DataGridViewTextBoxColumn();
+            documento = new DataGridViewTextBoxColumn();
+            telefono = new DataGridViewTextBoxColumn();
+            direccion = new DataGridViewTextBoxColumn();
+            pagar = new DataGridViewButtonColumn();
+            Carnet = new DataGridViewButtonColumn();
             tabNoSocios = new TabPage();
             dtgvNoSocios = new DataGridView();
             IdNS = new DataGridViewTextBoxColumn();
@@ -45,14 +52,6 @@
             telefono2 = new DataGridViewTextBoxColumn();
             direccion2 = new DataGridViewTextBoxColumn();
             actividad = new DataGridViewButtonColumn();
-            Id = new DataGridViewTextBoxColumn();
-            nombre = new DataGridViewTextBoxColumn();
-            apellido = new DataGridViewTextBoxColumn();
-            documento = new DataGridViewTextBoxColumn();
-            telefono = new DataGridViewTextBoxColumn();
-            direccion = new DataGridViewTextBoxColumn();
-            pagar = new DataGridViewButtonColumn();
-            Carnet = new DataGridViewButtonColumn();
             tabsClientes.SuspendLayout();
             tabSocios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dtgvSocios).BeginInit();
@@ -79,15 +78,6 @@
             btnInscribir.Text = "NUEVO CLIENTE";
             btnInscribir.UseVisualStyleBackColor = true;
             btnInscribir.Click += btnInscribir_Click;
-            // 
-            // btnPagoCuota
-            // 
-            btnPagoCuota.Location = new Point(654, 453);
-            btnPagoCuota.Name = "btnPagoCuota";
-            btnPagoCuota.Size = new Size(130, 33);
-            btnPagoCuota.TabIndex = 2;
-            btnPagoCuota.Text = "Pagos";
-            btnPagoCuota.UseVisualStyleBackColor = true;
             // 
             // btnBajas
             // 
@@ -145,6 +135,71 @@
             dtgvSocios.Size = new Size(968, 333);
             dtgvSocios.TabIndex = 0;
             dtgvSocios.CellContentClick += dtgvSocios_CellContentClick;
+            // 
+            // Id
+            // 
+            Id.HeaderText = "ID";
+            Id.MinimumWidth = 6;
+            Id.Name = "Id";
+            Id.ReadOnly = true;
+            Id.Width = 50;
+            // 
+            // nombre
+            // 
+            nombre.HeaderText = "Nombre";
+            nombre.MinimumWidth = 6;
+            nombre.Name = "nombre";
+            nombre.Width = 125;
+            // 
+            // apellido
+            // 
+            apellido.HeaderText = "Apellido";
+            apellido.MinimumWidth = 6;
+            apellido.Name = "apellido";
+            apellido.Width = 125;
+            // 
+            // documento
+            // 
+            documento.HeaderText = "Documento";
+            documento.MinimumWidth = 6;
+            documento.Name = "documento";
+            documento.Width = 140;
+            // 
+            // telefono
+            // 
+            telefono.HeaderText = "Telefono";
+            telefono.MinimumWidth = 6;
+            telefono.Name = "telefono";
+            telefono.Width = 125;
+            // 
+            // direccion
+            // 
+            direccion.HeaderText = "Direccion";
+            direccion.MinimumWidth = 6;
+            direccion.Name = "direccion";
+            direccion.Width = 150;
+            // 
+            // pagar
+            // 
+            pagar.HeaderText = "";
+            pagar.MinimumWidth = 6;
+            pagar.Name = "pagar";
+            pagar.Resizable = DataGridViewTriState.True;
+            pagar.SortMode = DataGridViewColumnSortMode.Automatic;
+            pagar.Text = "Pagar";
+            pagar.UseColumnTextForButtonValue = true;
+            pagar.Width = 90;
+            // 
+            // Carnet
+            // 
+            Carnet.HeaderText = "";
+            Carnet.MinimumWidth = 6;
+            Carnet.Name = "Carnet";
+            Carnet.Resizable = DataGridViewTriState.True;
+            Carnet.SortMode = DataGridViewColumnSortMode.Automatic;
+            Carnet.Text = "Carnet";
+            Carnet.UseColumnTextForButtonValue = true;
+            Carnet.Width = 90;
             // 
             // tabNoSocios
             // 
@@ -234,71 +289,6 @@
             actividad.UseColumnTextForButtonValue = true;
             actividad.Width = 180;
             // 
-            // Id
-            // 
-            Id.HeaderText = "ID";
-            Id.MinimumWidth = 6;
-            Id.Name = "Id";
-            Id.ReadOnly = true;
-            Id.Width = 50;
-            // 
-            // nombre
-            // 
-            nombre.HeaderText = "Nombre";
-            nombre.MinimumWidth = 6;
-            nombre.Name = "nombre";
-            nombre.Width = 125;
-            // 
-            // apellido
-            // 
-            apellido.HeaderText = "Apellido";
-            apellido.MinimumWidth = 6;
-            apellido.Name = "apellido";
-            apellido.Width = 125;
-            // 
-            // documento
-            // 
-            documento.HeaderText = "Documento";
-            documento.MinimumWidth = 6;
-            documento.Name = "documento";
-            documento.Width = 140;
-            // 
-            // telefono
-            // 
-            telefono.HeaderText = "Telefono";
-            telefono.MinimumWidth = 6;
-            telefono.Name = "telefono";
-            telefono.Width = 125;
-            // 
-            // direccion
-            // 
-            direccion.HeaderText = "Direccion";
-            direccion.MinimumWidth = 6;
-            direccion.Name = "direccion";
-            direccion.Width = 150;
-            // 
-            // pagar
-            // 
-            pagar.HeaderText = "";
-            pagar.MinimumWidth = 6;
-            pagar.Name = "pagar";
-            pagar.Resizable = DataGridViewTriState.True;
-            pagar.SortMode = DataGridViewColumnSortMode.Automatic;
-            pagar.Text = "Pagar";
-            pagar.UseColumnTextForButtonValue = true;
-            pagar.Width = 90;
-            // 
-            // Carnet
-            // 
-            Carnet.HeaderText = "";
-            Carnet.MinimumWidth = 6;
-            Carnet.Name = "Carnet";
-            Carnet.Resizable = DataGridViewTriState.True;
-            Carnet.SortMode = DataGridViewColumnSortMode.Automatic;
-            Carnet.Text = "Carnet";
-            Carnet.UseColumnTextForButtonValue = true;
-            Carnet.Width = 90;
-            // 
             // frmPrincipal
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -307,7 +297,6 @@
             Controls.Add(tabsClientes);
             Controls.Add(lblIngreso);
             Controls.Add(btnBajas);
-            Controls.Add(btnPagoCuota);
             Controls.Add(btnInscribir);
             Controls.Add(btnSalir);
             Name = "frmPrincipal";
@@ -326,7 +315,6 @@
 
         private Button btnSalir;
         private Button btnInscribir;
-        private Button btnPagoCuota;
         private Button btnBajas;
         private Label lblIngreso;
         private TabControl tabsClientes;

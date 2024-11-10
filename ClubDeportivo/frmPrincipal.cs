@@ -24,10 +24,7 @@ namespace ClubDeportivo
         internal string? usuario;
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
-            lblIngreso.Text = "BIENVENIDO USUARIO: " + usuario;
-
             tabSocios_Click(sender, e);
-
 
         }
 
@@ -72,7 +69,6 @@ namespace ClubDeportivo
 
             foreach (E_Cliente cliente in listado)
             {
-                Debug.WriteLine(cliente.Nombre);
                 int renglon = grid.Rows.Add();
                 grid.Rows[renglon].Cells[0].Value = cliente.Id;
                 grid.Rows[renglon].Cells[1].Value = cliente.Nombre;
@@ -92,8 +88,13 @@ namespace ClubDeportivo
             }
             else if (dtgvSocios.Columns[e.ColumnIndex].Name == "Carnet" && e.RowIndex >= 0)
             {
-                var rowData = dtgvSocios.Rows[e.RowIndex].Cells[0].Value;
-                MessageBox.Show($"Cambiar esto para que abra el form de Carnet para el socio con ID: {rowData}");
+                int id = (int)dtgvSocios.Rows[e.RowIndex].Cells["Id"].Value;
+                string nombre = dtgvSocios.Rows[e.RowIndex].Cells["Nombre"].Value.ToString()!;
+                string apellido = dtgvSocios.Rows[e.RowIndex].Cells["Apellido"].Value.ToString()!;
+                string documento = dtgvSocios.Rows[e.RowIndex].Cells["Documento"].Value.ToString()!;
+
+                Carnet carnet = new Carnet(id, nombre, apellido, documento);
+                carnet.Show();
             }
 
         }
