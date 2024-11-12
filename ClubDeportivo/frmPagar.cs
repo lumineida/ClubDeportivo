@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ClubDeportivo.Datos;
+using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,6 +22,9 @@ namespace ClubDeportivo
             txtApellido.Text = apellido;
             txtNombre.Text = nombre;
             txtDocumento.Text = documento;
+            txtFechaPago.Text = DateTime.Now.ToString("dd-MM-yyyy");
+            txtFechaPago.ReadOnly = true;
+            txtMonto.Focus();
         }
 
 
@@ -30,6 +35,34 @@ namespace ClubDeportivo
 
         private void btnConfirmarPago_Click(object sender, EventArgs e)
         {
+            if (txtIDCliente.Text == "" || txtApellido.Text == "" || txtNombre.Text == "" || txtDocumento.Text == "" || txtMonto.Text == "")
+            {
+                MessageBox.Show("Por favor complete todos los campos");
+            }
+            else
+            {
+                try
+                {
+                    string idSocio = txtIDCliente.Text;
+                    string monto = txtMonto.Text;
+                    string fecha = DateTime.Now.ToString("yyyy-MM-dd");
+                    string fechaVencimiento = DateTime.Now.AddMonths(1).ToString("yyyy-MM-dd");
+                    string formaPago = radioBtnEfectivo.Checked ? "efectivo" : "tarjeta";
+
+                    string query = "INSERT INTO cuota (idSocio, monto, fechaPago, fechaVencimiento, formaPago) VALUES ('" + idSocio + "', '" + monto + "', '" + fecha + "', '" + fechaVencimiento + "', '" + formaPago + "')";
+                    MySqlConnection conexion = Conexion.getInstancia().CrearConexion();
+                    conexion.Open();
+                    MySqlCommand comando = new MySqlCommand(query, conexion);
+                    comando.ExecuteNonQuery();
+                    conexion.Close();
+                    MessageBox.Show("Pago realizado con éxito");
+                    this.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al realizar el pago: " + ex.Message);
+                }
+            }
         }
 
         private void frmPagarSocio_Load(object sender, EventArgs e)

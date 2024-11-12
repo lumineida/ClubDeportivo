@@ -30,7 +30,7 @@
         {
             btnSalir = new Button();
             btnInscribir = new Button();
-            btnBajas = new Button();
+            btnListarVencimientos = new Button();
             lblIngreso = new Label();
             tabsClientes = new TabControl();
             tabSocios = new TabPage();
@@ -79,14 +79,15 @@
             btnInscribir.UseVisualStyleBackColor = true;
             btnInscribir.Click += btnInscribir_Click;
             // 
-            // btnBajas
+            // btnListarVencimientos
             // 
-            btnBajas.Location = new Point(812, 453);
-            btnBajas.Name = "btnBajas";
-            btnBajas.Size = new Size(182, 33);
-            btnBajas.TabIndex = 3;
-            btnBajas.Text = "Listar Vencimientos";
-            btnBajas.UseVisualStyleBackColor = true;
+            btnListarVencimientos.Location = new Point(812, 453);
+            btnListarVencimientos.Name = "btnListarVencimientos";
+            btnListarVencimientos.Size = new Size(182, 33);
+            btnListarVencimientos.TabIndex = 3;
+            btnListarVencimientos.Text = "Listar Vencimientos";
+            btnListarVencimientos.UseVisualStyleBackColor = true;
+            btnListarVencimientos.Click += btnListarVencimientos_Click;
             // 
             // lblIngreso
             // 
@@ -296,7 +297,7 @@
             ClientSize = new Size(1019, 498);
             Controls.Add(tabsClientes);
             Controls.Add(lblIngreso);
-            Controls.Add(btnBajas);
+            Controls.Add(btnListarVencimientos);
             Controls.Add(btnInscribir);
             Controls.Add(btnSalir);
             Name = "frmPrincipal";
@@ -315,7 +316,7 @@
 
         private Button btnSalir;
         private Button btnInscribir;
-        private Button btnBajas;
+        private Button btnListarVencimientos;
         private Label lblIngreso;
         private TabControl tabsClientes;
         private TabPage tabSocios;

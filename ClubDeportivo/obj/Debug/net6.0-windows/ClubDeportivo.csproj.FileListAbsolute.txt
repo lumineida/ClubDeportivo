@@ -72,7 +72,6 @@ C:\Users\cechu\source\repos\ClubDeportivo2\ClubDeportivo\bin\Debug\net6.0-window
 C:\Users\cechu\source\repos\ClubDeportivo2\ClubDeportivo\bin\Debug\net6.0-windows\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
 C:\Users\cechu\source\repos\ClubDeportivo2\ClubDeportivo\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 C:\Users\cechu\source\repos\ClubDeportivo2\ClubDeportivo\obj\Debug\net6.0-windows\ClubDeportivo.csproj.AssemblyReference.cache
-C:\Users\cechu\source\repos\ClubDeportivo2\ClubDeportivo\obj\Debug\net6.0-windows\ClubDeportivo.Form1.resources
 C:\Users\cechu\source\repos\ClubDeportivo2\ClubDeportivo\obj\Debug\net6.0-windows\ClubDeportivo.frmInscripcion.resources
 C:\Users\cechu\source\repos\ClubDeportivo2\ClubDeportivo\obj\Debug\net6.0-windows\ClubDeportivo.frmPrincipal.resources
 C:\Users\cechu\source\repos\ClubDeportivo2\ClubDeportivo\obj\Debug\net6.0-windows\ClubDeportivo.Properties.Resources.resources
@@ -90,3 +89,5 @@ C:\Users\cechu\source\repos\ClubDeportivo2\ClubDeportivo\obj\Debug\net6.0-window
 C:\Users\cechu\source\repos\ClubDeportivo2\ClubDeportivo\obj\Debug\net6.0-windows\ref\ClubDeportivo.dll
 C:\Users\cechu\source\repos\ClubDeportivo2\ClubDeportivo\obj\Debug\net6.0-windows\ClubDeportivo.Carnet.resources
 C:\Users\cechu\source\repos\ClubDeportivo2\ClubDeportivo\obj\Debug\net6.0-windows\ClubDeportivo.frmPagar.resources
+C:\Users\cechu\source\repos\ClubDeportivo2\ClubDeportivo\obj\Debug\net6.0-windows\ClubDeportivo.frmVencimientos.resources
+C:\Users\cechu\source\repos\ClubDeportivo2\ClubDeportivo\obj\Debug\net6.0-windows\ClubDeportivo.frmLogin.resources

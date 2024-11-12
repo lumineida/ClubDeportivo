@@ -35,7 +35,6 @@ namespace ClubDeportivo.Entidades
 
         }
 
-        public virtual void CargaGrillzzza() { }
 
     }
 }

@@ -122,5 +122,37 @@ namespace ClubDeportivo
             }
 
         }
+
+        private void btnListarVencimientos_Click(object sender, EventArgs e)
+        {
+            Clientes clientes = new Clientes();
+            List<E_Cuota> cuotasImpagas = clientes.ObtenerCuotasImpagas();
+
+            DataTable table = new DataTable();
+            table.Columns.Add("Socio ID");
+            table.Columns.Add("Nombre");
+            table.Columns.Add("Apellido");
+            table.Columns.Add("Telefono");
+            table.Columns.Add("Monto");
+            table.Columns.Add("Fecha de vencimiento");
+
+            foreach (E_Cuota cuota in cuotasImpagas)
+            {
+                table.Rows.Add(
+                   cuota.IdSocio,
+                   cuota.NombreSocio,
+                   cuota.ApellidoSocio,
+                   cuota.TelefonoSocio,
+                   cuota.Monto,
+                   cuota.FechaVencimiento.ToString("dd-MM-yyyy"));
+            }
+
+            frmVencimientos vencimientosForm = new frmVencimientos();
+            vencimientosForm.LoadData(table);
+            vencimientosForm.ShowDialog();
+            vencimientosForm.dataGridVencimientos.Columns["Fecha de Vencimiento"].HeaderText = "Fecha de vencimiento";
+
+
+        }
     }
 }
