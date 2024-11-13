@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Carnet));
             lblTitulo = new Label();
             lblNombre = new Label();
             lblApellido = new Label();
@@ -109,6 +110,7 @@
             // 
             pictureBox1.BackColor = SystemColors.ActiveCaption;
             pictureBox1.BorderStyle = BorderStyle.FixedSingle;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(19, 25);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(125, 125);

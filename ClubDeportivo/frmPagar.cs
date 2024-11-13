@@ -35,7 +35,7 @@ namespace ClubDeportivo
 
         private void btnConfirmarPago_Click(object sender, EventArgs e)
         {
-            if (txtIDCliente.Text == "" || txtApellido.Text == "" || txtNombre.Text == "" || txtDocumento.Text == "" || txtMonto.Text == "")
+            if (txtIDCliente.Text == "" || txtApellido.Text == "" || txtNombre.Text == "" || txtDocumento.Text == "" || txtMonto.Text == "" || (!radioBtnEfectivo.Checked && radioBtnTarjeta.Checked))
             {
                 MessageBox.Show("Por favor complete todos los campos");
             }

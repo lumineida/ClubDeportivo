@@ -126,6 +126,7 @@
             // 
             dtgvSocios.AllowUserToAddRows = false;
             dtgvSocios.AllowUserToDeleteRows = false;
+            dtgvSocios.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dtgvSocios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dtgvSocios.Columns.AddRange(new DataGridViewColumn[] { Id, nombre, apellido, documento, telefono, direccion, pagar, Carnet });
             dtgvSocios.Dock = DockStyle.Fill;
@@ -143,42 +144,36 @@
             Id.MinimumWidth = 6;
             Id.Name = "Id";
             Id.ReadOnly = true;
-            Id.Width = 50;
             // 
             // nombre
             // 
             nombre.HeaderText = "Nombre";
             nombre.MinimumWidth = 6;
             nombre.Name = "nombre";
-            nombre.Width = 125;
             // 
             // apellido
             // 
             apellido.HeaderText = "Apellido";
             apellido.MinimumWidth = 6;
             apellido.Name = "apellido";
-            apellido.Width = 125;
             // 
             // documento
             // 
             documento.HeaderText = "Documento";
             documento.MinimumWidth = 6;
             documento.Name = "documento";
-            documento.Width = 140;
             // 
             // telefono
             // 
             telefono.HeaderText = "Telefono";
             telefono.MinimumWidth = 6;
             telefono.Name = "telefono";
-            telefono.Width = 125;
             // 
             // direccion
             // 
             direccion.HeaderText = "Direccion";
             direccion.MinimumWidth = 6;
             direccion.Name = "direccion";
-            direccion.Width = 150;
             // 
             // pagar
             // 
@@ -189,7 +184,6 @@
             pagar.SortMode = DataGridViewColumnSortMode.Automatic;
             pagar.Text = "Pagar";
             pagar.UseColumnTextForButtonValue = true;
-            pagar.Width = 90;
             // 
             // Carnet
             // 
@@ -200,7 +194,6 @@
             Carnet.SortMode = DataGridViewColumnSortMode.Automatic;
             Carnet.Text = "Carnet";
             Carnet.UseColumnTextForButtonValue = true;
-            Carnet.Width = 90;
             // 
             // tabNoSocios
             // 
@@ -218,6 +211,7 @@
             // 
             dtgvNoSocios.AllowUserToAddRows = false;
             dtgvNoSocios.AllowUserToDeleteRows = false;
+            dtgvNoSocios.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dtgvNoSocios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dtgvNoSocios.Columns.AddRange(new DataGridViewColumn[] { IdNS, nombre2, apellido2, documento2, telefono2, direccion2, actividad });
             dtgvNoSocios.Dock = DockStyle.Fill;
@@ -236,7 +230,6 @@
             IdNS.MinimumWidth = 6;
             IdNS.Name = "IdNS";
             IdNS.ReadOnly = true;
-            IdNS.Width = 125;
             // 
             // nombre2
             // 
@@ -244,7 +237,6 @@
             nombre2.MinimumWidth = 6;
             nombre2.Name = "nombre2";
             nombre2.ReadOnly = true;
-            nombre2.Width = 125;
             // 
             // apellido2
             // 
@@ -252,7 +244,6 @@
             apellido2.MinimumWidth = 6;
             apellido2.Name = "apellido2";
             apellido2.ReadOnly = true;
-            apellido2.Width = 125;
             // 
             // documento2
             // 
@@ -260,7 +251,6 @@
             documento2.MinimumWidth = 6;
             documento2.Name = "documento2";
             documento2.ReadOnly = true;
-            documento2.Width = 125;
             // 
             // telefono2
             // 
@@ -268,7 +258,6 @@
             telefono2.MinimumWidth = 6;
             telefono2.Name = "telefono2";
             telefono2.ReadOnly = true;
-            telefono2.Width = 125;
             // 
             // direccion2
             // 
@@ -276,7 +265,6 @@
             direccion2.MinimumWidth = 6;
             direccion2.Name = "direccion2";
             direccion2.ReadOnly = true;
-            direccion2.Width = 125;
             // 
             // actividad
             // 
@@ -288,7 +276,6 @@
             actividad.SortMode = DataGridViewColumnSortMode.Automatic;
             actividad.Text = "Inscribir a actividad";
             actividad.UseColumnTextForButtonValue = true;
-            actividad.Width = 180;
             // 
             // frmPrincipal
             // 
