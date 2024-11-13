@@ -61,7 +61,7 @@ namespace ClubDeportivo
             }
             else
             {
-                string respuesta;
+                string? respuesta;
                 E_Cliente cliente = new E_Cliente();
                 cliente.Nombre = txtNombre.Text;
                 cliente.Apellido = txtApellido.Text;

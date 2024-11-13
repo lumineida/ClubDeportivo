@@ -36,8 +36,9 @@ namespace ClubDeportivo.Datos
                 return tabla;
             }
 
-            catch (Exception)
+            catch (Exception ex)
             {
+                MessageBox.Show("Ocurrió un error al intentar iniciar sesión: " + ex.Message, "Error de Inicio de Sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 throw;
             }
 

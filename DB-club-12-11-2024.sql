@@ -1,3 +1,11 @@
+CREATE DATABASE  IF NOT EXISTS `club` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `club`;
+-- MySQL dump 10.13  Distrib 8.0.32, for Win64 (x86_64)
+--
+-- Host: 127.0.0.1    Database: club
+-- ------------------------------------------------------
+-- Server version	8.0.30
+
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
@@ -10,14 +18,12 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Tabla 'cliente'
+-- Table structure for table `cliente`
 --
 
 DROP TABLE IF EXISTS `cliente`;
-
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-
 CREATE TABLE `cliente` (
   `id` int NOT NULL AUTO_INCREMENT,
   `nombre` varchar(20) DEFAULT NULL,
@@ -30,43 +36,54 @@ CREATE TABLE `cliente` (
   `ficha_med` tinyint(1) DEFAULT '0',
   `fecha_ingreso` datetime DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
 --
+-- Dumping data for table `cliente`
 --
+
 LOCK TABLES `cliente` WRITE;
 /*!40000 ALTER TABLE `cliente` DISABLE KEYS */;
-INSERT INTO `cliente` VALUES (1,'ffg','gfsdgf','DNI',5345435,'353453','grgerg',0,0,NULL),
-(2,'aaa','sss','DNI',222,'333','www',0,0,NULL),
-(3,'ce','fo','Pasaporte',30,'11','aa 33',0,0,'2024-10-07 19:58:37'),
-(4,'ce','fo','Extranjero',301,'22','222',0,0,'2024-10-07 19:59:41'),
-(5,'eee','rrr','DNI',333333,'4444444','eee 444',0,0,'2024-10-08 19:45:08'),
-(6,'11','11','DNI',11,'11','11',1,0,'2024-10-08 19:49:23'),
-(7,'112','112','DNI',112,'112','112',0,0,'2024-10-08 19:49:40'),
-(8,'aaa','ssss','DNI',11222,'11111','111',1,0,'2024-10-08 20:32:47'),
-(9,'aads','fgsdfg','DNI',65465,'654645','teytyt',0,0,'2024-10-08 20:35:19'),
-(10,'hdhgfdhgf','gfhdfg','DNI',6554645,'54645','ghdfhf',1,0,'2024-10-08 20:39:46'),
-(11,'fhgh','hgfdhf','Pasaporte',54545,'5454','gsggf',0,0,'2024-10-08 20:44:34'),
-(12,'hgfdh','hghd','DNI',56654,'546','ytyh',1,0,'2024-10-08 20:45:13'),
-(13,'hgfdh','hghd','DNI',56644,'546','ytyh',1,0,'2024-10-08 20:45:33'),
-(14,'ytrytyr','ytrye','DNI',654645,'654654','hdhg',1,0,'2024-10-08 20:47:18'),
-(15,'ggt','tgrr','DNI',55454,'5453','gfhgfdh',1,0,'2024-10-08 20:48:26'),
-(16,'kkjuk','khjk','DNI',8989,'877','jhkut',1,0,'2024-10-08 20:49:48'),
-(17,'ytuyt','uytru','DNI',8767,'65765','hhgh',1,0,'2024-10-08 20:50:55');
+INSERT INTO `cliente` VALUES (1,'ffg','gfsdgf','DNI','5345435','353453','grgerg',0,0,NULL),(2,'aaa','sss','DNI','222','333','www',0,0,NULL),(3,'ce','fo','Pasaporte','30','11','aa 33',0,0,'2024-10-07 19:58:37'),(4,'ce','fo','Extranjero','301','22','222',0,0,'2024-10-07 19:59:41'),(5,'eee','rrr','DNI','333333','4444444','eee 444',0,0,'2024-10-08 19:45:08'),(6,'11','11','DNI','11','11','11',1,0,'2024-10-08 19:49:23'),(7,'112','112','DNI','112','112','112',0,0,'2024-10-08 19:49:40'),(8,'aaa','ssss','DNI','11222','11111','111',1,0,'2024-10-08 20:32:47'),(9,'aads','fgsdfg','DNI','65465','654645','teytyt',0,0,'2024-10-08 20:35:19'),(10,'hdhgfdhgf','gfhdfg','DNI','6554645','54645','ghdfhf',1,0,'2024-10-08 20:39:46'),(11,'fhgh','hgfdhf','Pasaporte','54545','5454','gsggf',0,0,'2024-10-08 20:44:34'),(12,'hgfdh','hghd','DNI','56654','546','ytyh',1,0,'2024-10-08 20:45:13'),(13,'hgfdh','hghd','DNI','56644','546','ytyh',1,0,'2024-10-08 20:45:33'),(14,'ytrytyr','ytrye','DNI','654645','654654','hdhg',1,0,'2024-10-08 20:47:18'),(15,'ggt','tgrr','DNI','55454','5453','gfhgfdh',1,0,'2024-10-08 20:48:26'),(16,'kkjuk','khjk','DNI','8989','877','jhkut',1,0,'2024-10-08 20:49:48'),(17,'ytuyt','uytru','DNI','8767','65765','hhgh',1,0,'2024-10-08 20:50:55'),(18,'eeeee','eeeee','Pasaporte','33333','3333','3333',1,1,'2024-10-19 15:59:01'),(19,'yruytut','ytyrtuyt','DNI','76765','765','7657',0,1,'2024-10-19 16:36:24'),(20,'gfsdgf','hshg','Extranjero','6546566','65654h','tyhty',1,1,'2024-10-27 07:52:13'),(21,'xxx','ddd','Pasaporte','222222','4324324','fsdf 34232',1,1,'2024-11-12 20:41:10');
 /*!40000 ALTER TABLE `cliente` ENABLE KEYS */;
 UNLOCK TABLES;
 
-select * from cliente;
+--
+-- Table structure for table `cuota`
+--
+
+DROP TABLE IF EXISTS `cuota`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `cuota` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `idSocio` int DEFAULT NULL,
+  `monto` int DEFAULT NULL,
+  `fechaPago` date DEFAULT NULL,
+  `fechaVencimiento` date DEFAULT NULL,
+  `formaPago` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Tabla 'usuario'
+-- Dumping data for table `cuota`
+--
+
+LOCK TABLES `cuota` WRITE;
+/*!40000 ALTER TABLE `cuota` DISABLE KEYS */;
+INSERT INTO `cuota` VALUES (1,8,200,'2024-11-12','2024-11-12','efectivo'),(2,12,500,'2024-11-12','2024-10-12','tarjeta'),(3,15,400,'2024-11-12','2024-12-12','tarjeta');
+/*!40000 ALTER TABLE `cuota` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `usuario`
 --
 
 DROP TABLE IF EXISTS `usuario`;
-
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-
 CREATE TABLE `usuario` (
   `id` int NOT NULL AUTO_INCREMENT,
   `nombre` varchar(20) DEFAULT NULL,
@@ -75,8 +92,11 @@ CREATE TABLE `usuario` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
 --
+-- Dumping data for table `usuario`
 --
+
 LOCK TABLES `usuario` WRITE;
 /*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
 INSERT INTO `usuario` VALUES (1,'admin','admin',1);
@@ -84,6 +104,7 @@ INSERT INTO `usuario` VALUES (1,'admin','admin',1);
 UNLOCK TABLES;
 
 --
+-- Dumping routines for database 'club'
 --
 /*!50003 DROP PROCEDURE IF EXISTS `IngresoLogin` */;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
@@ -94,11 +115,7 @@ UNLOCK TABLES;
 /*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
-
 DELIMITER ;;
-
--- 1) Iniciar sesión
-
 CREATE DEFINER=`root`@`localhost` PROCEDURE `IngresoLogin`(in Usu varchar(20),in Pass varchar(15))
 begin
   /* proyecto en la consulta el rol que tiene el usuario que ingresa */
@@ -124,26 +141,19 @@ DELIMITER ;
 /*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
-
 DELIMITER ;;
-
--- 2) Ingresar nuevo cliente
-
 CREATE DEFINER=`root`@`localhost` PROCEDURE `NuevoCliente`(in Nom varchar(30),in Ape varchar(40), in TipoDoc varchar(10), in NroDoc varchar(20), in Tel varchar(40), in Dir varchar(40), in Soc tinyint(1), in FichaMed tinyint(1), out rta tinyint(1))
 begin
 	 declare existe int default 0;
 	 set existe = (select count(*) from cliente where nro_doc = NroDoc);
 	 
 	  if existe = 0 then	 
-		 insert into cliente  (`nombre`, `apellido`, `tipo_doc`, `nro_doc`, `telefono`, `direccion`, `socio`,`ficha_med`)  values(Nom,Ape,TipoDoc,NroDoc,Tel,Dir,Soc,FichaMed);
+		 insert into cliente  (`nombre`, `apellido`, `tipo_doc`, `nro_doc`, `telefono`, `direccion`, `socio`,`ficha_med`) values (Nom,Ape,TipoDoc,NroDoc,Tel,Dir,Soc,FichaMed);
       end if;		 
     
     set rta = existe;
-     end$$
-  
-  
+     end ;;
 DELIMITER ;
-
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
 /*!50003 SET character_set_results = @saved_cs_results */ ;
@@ -157,3 +167,5 @@ DELIMITER ;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2024-11-12 21:08:30

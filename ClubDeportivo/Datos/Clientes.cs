@@ -12,7 +12,7 @@ namespace ClubDeportivo.Datos
     internal class Clientes
     {
 
-        public string Nuevo_Cliente(E_Cliente cliente)
+        public string? Nuevo_Cliente(E_Cliente cliente)
         {
             string? salida;
             salida = " ";
@@ -61,6 +61,56 @@ namespace ClubDeportivo.Datos
             return salida;
 
         }
+
+
+
+        public List<E_Cuota> ObtenerCuotasImpagas()
+        {
+            List<E_Cuota> cuotasImpagas = new List<E_Cuota>();
+
+            MySqlConnection sqlCon = Conexion.getInstancia().CrearConexion();
+
+            try
+            {
+                sqlCon.Open();
+                MySqlCommand comando = new MySqlCommand(
+                    "SELECT c.id, c.idSocio, c.monto, c.fechaVencimiento, cl.nombre, cl.apellido, cl.telefono " +
+                    "FROM Cuota c " +
+                    "INNER JOIN Cliente cl ON c.idSocio = cl.id " +
+                    "WHERE c.fechaVencimiento <= CURDATE()",
+                    sqlCon);
+
+                MySqlDataReader reader = comando.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    E_Cuota cuota = new E_Cuota
+                    {
+                        Id = reader.GetInt32("id"),
+                        IdSocio = reader.GetInt32("idSocio"),
+                        Monto = reader.GetDecimal("monto"),
+                        FechaVencimiento = reader.GetDateTime("fechaVencimiento"),
+                        NombreSocio = reader.GetString("nombre"),
+                        ApellidoSocio = reader.GetString("apellido"),
+                        TelefonoSocio = reader.GetString("telefono")
+                    };
+                    cuotasImpagas.Add(cuota);
+                }
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al buscar cuotas impagas: " + ex.Message);
+            }
+            finally
+            {
+                if (sqlCon.State == ConnectionState.Open)
+                    sqlCon.Close();
+            }
+
+            return cuotasImpagas;
+        }
+
 
     }
 }
