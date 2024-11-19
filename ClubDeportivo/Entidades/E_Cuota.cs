@@ -19,9 +19,5 @@ namespace ClubDeportivo.Entidades
         public string TelefonoSocio { get; set; }
 
 
-        public bool EsCuotaImpaga()
-        {
-            return !FechaPago.HasValue && FechaVencimiento <= DateTime.Now;
-        }
     }
 }

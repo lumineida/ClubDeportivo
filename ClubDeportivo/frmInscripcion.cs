@@ -20,6 +20,27 @@ namespace ClubDeportivo
         }
 
 
+        private void frmInscripcion_Load(object sender, EventArgs e)
+        {
+            cboTipoDoc.Items.Add("Seleccionar");
+            cboTipoDoc.Items.Add("DNI");
+            cboTipoDoc.Items.Add("Pasaporte");
+            cboTipoDoc.Items.Add("Extranjero");
+            cboTipoDoc.SelectedIndex = 0;
+        }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            frmPrincipal principal = new frmPrincipal();
+            principal.Show();
+            this.Close();
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            LimpiarTextBox(this);
+        }
+
         private void LimpiarTextBox(Control control)
         {
             foreach (Control c in control.Controls)
@@ -47,11 +68,6 @@ namespace ClubDeportivo
             }
         }
 
-
-        private void btnLimpiar_Click(object sender, EventArgs e)
-        {
-            LimpiarTextBox(this);
-        }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
@@ -94,21 +110,6 @@ namespace ClubDeportivo
         }
 
 
-        private void frmInscripcion_Load(object sender, EventArgs e)
-        {
-            cboTipoDoc.Items.Add("Seleccionar");
-            cboTipoDoc.Items.Add("DNI");
-            cboTipoDoc.Items.Add("Pasaporte");
-            cboTipoDoc.Items.Add("Extranjero");
-            cboTipoDoc.SelectedIndex = 0;
-        }
-
-        private void btnVolver_Click(object sender, EventArgs e)
-        {
-            frmPrincipal principal = new frmPrincipal();
-            principal.Show();
-            this.Close();
-        }
 
     }
 }

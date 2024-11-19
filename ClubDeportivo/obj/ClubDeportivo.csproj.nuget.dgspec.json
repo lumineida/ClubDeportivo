@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\cechu\\source\\repos\\ClubDeportivo2\\ClubDeportivo\\ClubDeportivo.csproj": {}
+    "C:\\Users\\cechu\\source\\repos\\ClubDepoGH\\ClubDeportivo\\ClubDeportivo.csproj": {}
   },
   "projects": {
-    "C:\\Users\\cechu\\source\\repos\\ClubDeportivo2\\ClubDeportivo\\ClubDeportivo.csproj": {
+    "C:\\Users\\cechu\\source\\repos\\ClubDepoGH\\ClubDeportivo\\ClubDeportivo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\cechu\\source\\repos\\ClubDeportivo2\\ClubDeportivo\\ClubDeportivo.csproj",
+        "projectUniqueName": "C:\\Users\\cechu\\source\\repos\\ClubDepoGH\\ClubDeportivo\\ClubDeportivo.csproj",
         "projectName": "ClubDeportivo",
-        "projectPath": "C:\\Users\\cechu\\source\\repos\\ClubDeportivo2\\ClubDeportivo\\ClubDeportivo.csproj",
+        "projectPath": "C:\\Users\\cechu\\source\\repos\\ClubDepoGH\\ClubDeportivo\\ClubDeportivo.csproj",
         "packagesPath": "C:\\Users\\cechu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\cechu\\source\\repos\\ClubDeportivo2\\ClubDeportivo\\obj\\",
+        "outputPath": "C:\\Users\\cechu\\source\\repos\\ClubDepoGH\\ClubDeportivo\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
